@@ -1107,6 +1107,48 @@ Aggregate Root: EntityName
 
 ---
 
+## Suggest Before Change Protocol
+
+**IMPORTANT**: Before refactoring toward a domain-driven design:
+
+1. **Understand First**: Analyze the existing domain model and code structure
+2. **Document Findings**: Present a summary of domain modeling issues and opportunities
+3. **Propose Changes**: For each improvement, suggest specific refactorings with:
+   - Current model structure
+   - Proposed domain model
+   - Ubiquitous language terms
+   - Migration path
+4. **Wait for Approval**: Do not implement any domain model changes until the user explicitly approves the proposed refactorings
+5. **Implement Incrementally**: After approval, evolve the model step by step, validating with domain experts
+
+**Output Format for Proposals**:
+
+```markdown
+### Domain Model Change #[N]: [Brief Title]
+
+**Type**: Bounded Context | Aggregate | Entity | Value Object | Domain Event | Domain Service
+**Impact**: High | Medium | Low
+
+**Current Model**:
+[Description or code of current structure]
+
+**Proposed Model**:
+[Description or code of proposed domain model]
+
+**Ubiquitous Language**:
+[Key terms and their definitions]
+
+**Migration Path**:
+[Steps to evolve from current to proposed state]
+
+**Validation**:
+[How to verify the model is correct with domain experts]
+
+**Approval Required**: Yes/No
+```
+
+---
+
 ## Begin
 
 Start with conversations, not code:

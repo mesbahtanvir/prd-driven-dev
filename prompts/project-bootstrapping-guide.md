@@ -1130,6 +1130,48 @@ npm install -D prettier eslint-config-prettier
 
 ---
 
+## Suggest Before Change Protocol
+
+**IMPORTANT**: Before setting up or modifying project configuration:
+
+1. **Understand Requirements**: Gather information about project goals, team size, and constraints
+2. **Document Recommendations**: Present a summary of suggested tools and configurations
+3. **Propose Setup**: For each component, suggest specific configurations with:
+   - Recommended tool/library
+   - Configuration details
+   - Rationale for choice
+   - Alternatives considered
+4. **Wait for Approval**: Do not create files or install dependencies until the user explicitly approves the proposed setup
+5. **Implement Incrementally**: After approval, set up components one at a time, verifying each works before proceeding
+
+**Output Format for Proposals**:
+
+```markdown
+### Proposed Setup #[N]: [Brief Title]
+
+**Category**: Package Manager | Linting | Testing | CI/CD | Security | Documentation
+**Priority**: Essential | Recommended | Optional
+
+**Recommendation**:
+[Tool/library name and version]
+
+**Configuration**:
+[Sample configuration file contents]
+
+**Rationale**:
+[Why this choice is recommended]
+
+**Alternatives Considered**:
+[Other options and why they weren't chosen]
+
+**Setup Commands**:
+[Commands to install and configure]
+
+**Approval Required**: Yes/No
+```
+
+---
+
 ## Begin
 
 Set up your new project with:

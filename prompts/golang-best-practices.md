@@ -590,6 +590,48 @@ mockgen -source=interface.go -destination=mock.go
 
 ---
 
+## Suggest Before Change Protocol
+
+**IMPORTANT**: Before making any changes to the Go codebase:
+
+1. **Analyze First**: Review the existing code for Go idioms, patterns, and issues
+2. **Document Findings**: Present a summary of issues found with severity levels
+3. **Propose Changes**: For each issue, suggest specific improvements with:
+   - Current code
+   - Proposed idiomatic Go code
+   - Go proverb or best practice applied
+   - Risk assessment
+4. **Wait for Approval**: Do not implement any changes until the user explicitly approves the proposed refactorings
+5. **Implement & Test**: After approval, make changes one at a time, running `go vet`, `staticcheck`, and tests after each change
+
+**Output Format for Proposals**:
+
+```markdown
+### Proposed Change #[N]: [Brief Title]
+
+**Category**: Error Handling | Concurrency | Performance | Idioms | Testing
+**Priority**: Critical | High | Medium | Low
+
+**Current Code**:
+[Go code snippet showing current implementation]
+
+**Proposed Code**:
+[Go code snippet showing idiomatic implementation]
+
+**Go Proverb/Best Practice**:
+[Relevant Go proverb or community best practice]
+
+**Risk Assessment**:
+[Potential side effects or breaking changes]
+
+**Verification**:
+[Commands to verify: go vet, staticcheck, go test]
+
+**Approval Required**: Yes/No
+```
+
+---
+
 ## Begin
 
 Analyze your Go code for:

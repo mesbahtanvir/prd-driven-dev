@@ -1174,6 +1174,48 @@ env:
 
 ---
 
+## Suggest Before Change Protocol
+
+**IMPORTANT**: Before making any changes to CI/CD workflows:
+
+1. **Audit First**: Review the existing workflows in `.github/workflows/`
+2. **Document Findings**: Present a summary of issues found with severity levels
+3. **Propose Changes**: For each issue, suggest specific improvements with:
+   - Current workflow configuration
+   - Proposed workflow configuration
+   - Expected improvement (time, cost, security)
+   - Risk assessment
+4. **Wait for Approval**: Do not modify any workflow files until the user explicitly approves the proposed changes
+5. **Implement & Monitor**: After approval, make changes one at a time, monitoring pipeline runs to verify improvements
+
+**Output Format for Proposals**:
+
+```markdown
+### Proposed CI/CD Improvement #[N]: [Brief Title]
+
+**Category**: Performance | Caching | Security | Testing | Deployment | Cost
+**Priority**: Critical | High | Medium | Low
+
+**Current Workflow**:
+[YAML snippet showing current configuration]
+
+**Proposed Workflow**:
+[YAML snippet showing proposed configuration]
+
+**Expected Improvement**:
+[Time savings, cost reduction, security enhancement]
+
+**Risk Assessment**:
+[Potential issues or breaking changes]
+
+**Rollback Plan**:
+[How to revert if the change causes problems]
+
+**Approval Required**: Yes/No
+```
+
+---
+
 ## Begin
 
 Analyze your GitHub Actions workflows in `.github/workflows/` for:

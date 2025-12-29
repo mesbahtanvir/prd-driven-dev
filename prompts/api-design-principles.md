@@ -860,6 +860,45 @@ Authorization: Bearer {token}
 
 ---
 
+## Suggest Before Change Protocol
+
+**IMPORTANT**: Before making any changes to the codebase:
+
+1. **Analyze First**: Review the existing code/API structure thoroughly
+2. **Document Findings**: Present a summary of issues found with severity levels
+3. **Propose Changes**: For each issue, suggest specific changes with:
+   - Current state (what exists)
+   - Proposed state (what it should be)
+   - Rationale (why this change improves the API)
+   - Impact assessment (breaking changes, migration needs)
+4. **Wait for Approval**: Do not implement any changes until the user explicitly approves the proposed changes
+5. **Implement Incrementally**: After approval, make changes one at a time, verifying each before proceeding
+
+**Output Format for Proposals**:
+
+```markdown
+### Proposed Change #[N]: [Brief Title]
+
+**Severity**: Critical | High | Medium | Low
+**Type**: Breaking Change | Non-Breaking | Enhancement
+
+**Current State**:
+[Description or code snippet of current implementation]
+
+**Proposed State**:
+[Description or code snippet of proposed implementation]
+
+**Rationale**:
+[Why this change should be made]
+
+**Migration Impact**:
+[What needs to change for existing consumers]
+
+**Approval Required**: Yes/No
+```
+
+---
+
 ## Begin
 
 Design your API with empathy for developers who will use it. Ask:

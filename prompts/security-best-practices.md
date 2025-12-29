@@ -1162,6 +1162,46 @@ const API_KEY = process.env.API_KEY; // ✅
 
 ---
 
+## Suggest Before Change Protocol
+
+**IMPORTANT**: Before making any security-related changes to the codebase:
+
+1. **Audit First**: Conduct a thorough security review of the existing code
+2. **Document Vulnerabilities**: Present a summary of security issues found with severity levels (Critical/High/Medium/Low)
+3. **Propose Remediation**: For each vulnerability, suggest specific fixes with:
+   - Current vulnerable code
+   - Proposed secure implementation
+   - OWASP category and CWE reference
+   - Risk if left unfixed
+4. **Wait for Approval**: Do not implement any security fixes until the user explicitly approves the proposed changes
+5. **Implement Carefully**: After approval, make changes one at a time, testing each fix thoroughly
+
+**Output Format for Proposals**:
+
+```markdown
+### Security Finding #[N]: [Brief Title]
+
+**Severity**: Critical | High | Medium | Low
+**OWASP Category**: [e.g., A01:2021 - Broken Access Control]
+**CWE Reference**: [e.g., CWE-89: SQL Injection]
+
+**Vulnerable Code**:
+[Code snippet showing the vulnerability]
+
+**Proposed Fix**:
+[Code snippet showing the secure implementation]
+
+**Risk Assessment**:
+[What could happen if exploited]
+
+**Verification Steps**:
+[How to verify the fix works]
+
+**Approval Required**: Yes/No
+```
+
+---
+
 ## Begin
 
 Security is not a feature to add later—it must be built in from the start. Review your codebase for:

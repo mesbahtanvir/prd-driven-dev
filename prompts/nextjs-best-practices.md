@@ -843,6 +843,48 @@ export default function Page() {
 
 ---
 
+## Suggest Before Change Protocol
+
+**IMPORTANT**: Before making any changes to the Next.js application:
+
+1. **Analyze First**: Review the existing application architecture and patterns
+2. **Document Findings**: Present a summary of issues found with severity levels
+3. **Propose Changes**: For each issue, suggest specific improvements with:
+   - Current implementation
+   - Proposed implementation
+   - Next.js best practice being applied
+   - Performance/SEO impact
+4. **Wait for Approval**: Do not implement any changes until the user explicitly approves the proposed improvements
+5. **Implement Incrementally**: After approval, make changes one at a time, testing each before proceeding
+
+**Output Format for Proposals**:
+
+```markdown
+### Proposed Improvement #[N]: [Brief Title]
+
+**Category**: Routing | Data Fetching | Performance | SEO | Security | Configuration
+**Priority**: Critical | High | Medium | Low
+
+**Current Implementation**:
+[Code or description of current state]
+
+**Proposed Implementation**:
+[Code or description of proposed state]
+
+**Best Practice Applied**:
+[Which Next.js best practice this addresses]
+
+**Expected Impact**:
+[Performance metrics, SEO improvements, or other benefits]
+
+**Migration Steps**:
+[Steps to safely implement the change]
+
+**Approval Required**: Yes/No
+```
+
+---
+
 ## Begin
 
 Analyze your Next.js application for:

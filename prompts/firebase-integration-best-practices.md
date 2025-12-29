@@ -832,6 +832,48 @@ export const processOrder = functions.https.onCall(async (data, context) => {
 
 ---
 
+## Suggest Before Change Protocol
+
+**IMPORTANT**: Before making any changes to the Firebase implementation:
+
+1. **Audit First**: Review the existing Firebase configuration, rules, and code
+2. **Document Findings**: Present a summary of issues found with severity levels
+3. **Propose Changes**: For each issue, suggest specific improvements with:
+   - Current implementation
+   - Proposed implementation
+   - Firebase best practice being applied
+   - Security/cost/performance impact
+4. **Wait for Approval**: Do not implement any changes until the user explicitly approves the proposed improvements
+5. **Implement Carefully**: After approval, make changes one at a time, testing rules and functions before deploying
+
+**Output Format for Proposals**:
+
+```markdown
+### Proposed Change #[N]: [Brief Title]
+
+**Category**: Security Rules | Authentication | Firestore | Storage | Functions | Hosting
+**Priority**: Critical | High | Medium | Low
+
+**Current Implementation**:
+[Code or configuration showing current state]
+
+**Proposed Implementation**:
+[Code or configuration showing proposed state]
+
+**Best Practice Applied**:
+[Which Firebase best practice this addresses]
+
+**Impact Assessment**:
+[Security improvements, cost savings, or performance gains]
+
+**Testing Required**:
+[How to verify the change works correctly]
+
+**Approval Required**: Yes/No
+```
+
+---
+
 ## Begin
 
 Analyze your Firebase implementation for:

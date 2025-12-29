@@ -387,6 +387,46 @@ For each refactoring:
 
 ---
 
+## Suggest Before Change Protocol
+
+**IMPORTANT**: Before making any changes to the codebase:
+
+1. **Analyze First**: Review the existing code structure thoroughly
+2. **Document Findings**: Present a summary of code smells found with severity levels
+3. **Propose Changes**: For each issue, suggest specific refactorings with:
+   - Current state (the problematic code)
+   - Proposed state (the clean code solution)
+   - Clean Code principle applied
+   - Risk assessment (potential side effects)
+4. **Wait for Approval**: Do not implement any changes until the user explicitly approves the proposed refactorings
+5. **Implement Incrementally**: After approval, make changes one at a time, running tests after each change
+
+**Output Format for Proposals**:
+
+```markdown
+### Proposed Refactoring #[N]: [Brief Title]
+
+**Code Smell**: [Name of the smell identified]
+**Clean Code Principle**: [Relevant principle from the book]
+**Risk Level**: Low | Medium | High
+
+**Current State**:
+[Code snippet showing the problem]
+
+**Proposed State**:
+[Code snippet showing the clean solution]
+
+**Rationale**:
+[Why this refactoring improves the code]
+
+**Tests Required**:
+[What tests should pass before and after]
+
+**Approval Required**: Yes/No
+```
+
+---
+
 ## Begin
 
 Start by analyzing the codebase. Identify the top 5 most impactful improvements based on Clean Code principles. Prioritize changes that will make future modifications easier - the direction the code is already evolving toward.

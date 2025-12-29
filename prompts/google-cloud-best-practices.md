@@ -623,6 +623,48 @@ gcloud services list --enabled
 
 ---
 
+## Suggest Before Change Protocol
+
+**IMPORTANT**: Before making any changes to the GCP infrastructure or configuration:
+
+1. **Audit First**: Review the existing GCP setup, IAM policies, and architecture
+2. **Document Findings**: Present a summary of issues found with severity levels
+3. **Propose Changes**: For each issue, suggest specific improvements with:
+   - Current configuration
+   - Proposed configuration
+   - GCP best practice being applied
+   - Cost/security/reliability impact
+4. **Wait for Approval**: Do not implement any changes until the user explicitly approves the proposed improvements
+5. **Implement Carefully**: After approval, make changes one at a time, testing in non-production first when possible
+
+**Output Format for Proposals**:
+
+```markdown
+### Proposed Change #[N]: [Brief Title]
+
+**Category**: IAM/Security | Compute | Storage | Networking | Monitoring | Cost
+**Priority**: Critical | High | Medium | Low
+
+**Current Configuration**:
+[gcloud commands, Terraform, or console settings showing current state]
+
+**Proposed Configuration**:
+[gcloud commands, Terraform, or console settings showing proposed state]
+
+**GCP Best Practice**:
+[Which GCP Well-Architected Framework principle this addresses]
+
+**Impact Assessment**:
+[Cost savings, security improvements, or reliability gains]
+
+**Rollback Plan**:
+[How to revert if something goes wrong]
+
+**Approval Required**: Yes/No
+```
+
+---
+
 ## Begin
 
 Analyze your GCP deployment for:

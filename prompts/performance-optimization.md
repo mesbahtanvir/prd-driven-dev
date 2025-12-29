@@ -1053,6 +1053,49 @@ const worker = new Worker('heavy.js');
 
 ---
 
+## Suggest Before Change Protocol
+
+**IMPORTANT**: Before making any performance optimizations:
+
+1. **Measure First**: Profile the system to identify actual bottlenecks with data
+2. **Document Findings**: Present a summary of performance issues found with impact levels
+3. **Propose Optimizations**: For each bottleneck, suggest specific optimizations with:
+   - Current performance metrics
+   - Expected improvement
+   - Implementation approach
+   - Risk assessment (breaking changes, side effects)
+4. **Wait for Approval**: Do not implement any optimizations until the user explicitly approves the proposed changes
+5. **Implement & Verify**: After approval, make changes one at a time, measuring before and after each change
+
+**Output Format for Proposals**:
+
+```markdown
+### Performance Optimization #[N]: [Brief Title]
+
+**Impact**: High | Medium | Low
+**Effort**: Low | Medium | High
+**Category**: Frontend | Backend | Database | Network
+
+**Current State**:
+[Metrics showing the performance issue - p50, p95, p99]
+
+**Proposed Optimization**:
+[Description and code changes needed]
+
+**Expected Improvement**:
+[Projected metrics after optimization]
+
+**Risk Assessment**:
+[Potential side effects or breaking changes]
+
+**Verification Method**:
+[How to measure the improvement]
+
+**Approval Required**: Yes/No
+```
+
+---
+
 ## Begin
 
 Performance optimization is data-driven. Start with:

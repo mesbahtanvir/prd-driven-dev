@@ -659,6 +659,48 @@ open coverage/index.html
 
 ---
 
+## Suggest Before Change Protocol
+
+**IMPORTANT**: Before making any changes to the test suite:
+
+1. **Analyze First**: Review the existing test suite structure and coverage
+2. **Document Findings**: Present a summary of test issues found with severity levels
+3. **Propose Changes**: For each issue, suggest specific improvements with:
+   - Current test code
+   - Proposed test code
+   - Testing principle applied
+   - Expected improvement
+4. **Wait for Approval**: Do not implement any changes until the user explicitly approves the proposed test improvements
+5. **Implement & Verify**: After approval, make changes one at a time, ensuring all tests still pass
+
+**Output Format for Proposals**:
+
+```markdown
+### Proposed Test Improvement #[N]: [Brief Title]
+
+**Category**: Coverage | Test Smell | Performance | Maintainability | Isolation
+**Priority**: Critical | High | Medium | Low
+
+**Current Test**:
+[Test code snippet showing current state]
+
+**Proposed Test**:
+[Test code snippet showing improved state]
+
+**Testing Principle Applied**:
+[FIRST, AAA, or other testing best practice]
+
+**Expected Improvement**:
+[Better coverage, faster execution, clearer intent, etc.]
+
+**Verification**:
+[How to verify the improvement]
+
+**Approval Required**: Yes/No
+```
+
+---
+
 ## Begin
 
 Analyze your test suite for:

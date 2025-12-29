@@ -761,6 +761,45 @@ When practicing TDD, document:
 
 ---
 
+## Suggest Before Change Protocol
+
+**IMPORTANT**: Before adding tests or modifying existing code:
+
+1. **Analyze First**: Review the existing test coverage and codebase structure
+2. **Document Findings**: Present a summary of testing gaps with priority levels
+3. **Propose Test Plan**: For each area, suggest specific tests with:
+   - What behavior needs testing
+   - Test type (unit, integration, e2e)
+   - Expected outcomes
+   - Dependencies or mocks required
+4. **Wait for Approval**: Do not write tests until the user explicitly approves the test plan
+5. **Implement Incrementally**: After approval, follow the Red-Green-Refactor cycle for each test
+
+**Output Format for Proposals**:
+
+```markdown
+### Proposed Test #[N]: [Brief Title]
+
+**Priority**: Critical | High | Medium | Low
+**Test Type**: Unit | Integration | E2E | Characterization
+
+**Behavior to Test**:
+[Description of the behavior being tested]
+
+**Test Scenario**:
+[Given/When/Then or Arrange/Act/Assert outline]
+
+**Expected Outcome**:
+[What the test should verify]
+
+**Dependencies**:
+[Mocks, fixtures, or setup required]
+
+**Approval Required**: Yes/No
+```
+
+---
+
 ## Begin
 
 Start with the smallest, simplest test you can think of. Remember:

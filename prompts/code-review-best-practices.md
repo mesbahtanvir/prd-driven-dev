@@ -859,6 +859,43 @@ Brief overview of the changes and general assessment.
 
 ---
 
+## Suggest Before Change Protocol
+
+**IMPORTANT**: Before suggesting any changes in code reviews:
+
+1. **Understand First**: Review the PR description and understand the context
+2. **Categorize Findings**: Organize feedback by severity (Critical, Important, Suggestion)
+3. **Propose Changes**: For each issue, provide specific suggestions with:
+   - What you observed
+   - Why it matters
+   - How to improve it
+   - Alternative approaches (if applicable)
+4. **Collaborate on Solutions**: Present proposals for discussion, don't demand changes
+5. **Prioritize**: Focus on critical issues first; batch minor suggestions
+
+**Output Format for Review Feedback**:
+
+```markdown
+### Review Comment #[N]: [Brief Title]
+
+**Category**: 🚨 Critical | ⚠️ Important | 💡 Suggestion | ❓ Question
+**Location**: [file:line_number]
+
+**Observation**:
+[What you noticed in the code]
+
+**Impact**:
+[Why this matters - security, performance, maintainability, etc.]
+
+**Suggested Change**:
+[Specific recommendation or code example]
+
+**Discussion Points**:
+[Questions or alternatives to consider together]
+```
+
+---
+
 ## Begin
 
 Approach each review with:
