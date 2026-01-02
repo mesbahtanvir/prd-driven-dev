@@ -20,6 +20,33 @@ You are a prompt engineering expert. Your mission is to analyze, clean up, and o
 
 ---
 
+## 🚀 Quick Start
+
+**Need to fix a prompt right now?** Use this 60-second checklist:
+
+### The 5-Minute Prompt Fix
+
+1. **Add a role**: "You are a [EXPERT] specializing in [DOMAIN]"
+2. **Be specific**: Replace "better" with measurable criteria
+3. **Show an example**: One before/after example is worth 1000 words
+4. **Define output format**: Tell AI exactly how to structure response
+5. **Test it**: Run prompt 2-3 times, check consistency
+
+### Common Fixes
+
+| Problem | Quick Fix |
+|---------|-----------|
+| "Make it better" | → "Optimize for [METRIC]: reduce from X to Y" |
+| No examples | → Add "Example: Input → Output" |
+| Vague role | → "You are a [SPECIFIC EXPERT] with [CONTEXT]" |
+| Long response | → "Limit response to [N] items, prioritize by [CRITERIA]" |
+| AI misunderstands | → Add context: "This is a [TECH STACK] project with [CONSTRAINTS]" |
+| Inconsistent output | → Define format: "Use this structure: 1) X, 2) Y, 3) Z" |
+
+**When you have more time**, read the full guide below for comprehensive refinement methodology.
+
+---
+
 ## Phase 1: Prompt Analysis Framework
 
 ### The 5 Core Elements of Effective Prompts
@@ -67,6 +94,56 @@ Rate the prompt on these dimensions (1-5):
 - [ ] **Examples**: Are there clear examples?
 - [ ] **Structure**: Is it well-organized?
 - [ ] **Actionability**: Can the AI act on it immediately?
+
+---
+
+## When NOT to Refine a Prompt
+
+**Not every prompt needs optimization.** Skip refinement if:
+
+### ✅ Simple Questions
+
+Direct questions with clear answers don't need role/context/format:
+
+```
+"What is the capital of France?"
+"Explain recursion in one sentence."
+"How do I install Node.js?"
+```
+
+### ✅ Brainstorming
+
+Open-ended creative tasks benefit from less constraint:
+
+```
+"Give me 10 creative names for a coffee shop"
+"Suggest unique features for a productivity app"
+"What are some unconventional marketing ideas?"
+```
+
+### ✅ Casual Conversation
+
+Informal chat prompts work as-is:
+
+```
+"Tell me about your capabilities"
+"What's interesting about quantum computing?"
+"Explain this concept like I'm five"
+```
+
+### ❌ DO Refine When
+
+**Invest in refinement when**:
+
+- ⚠️ **Inconsistent results** - Same prompt gives different quality outputs
+- ⚠️ **AI misunderstands frequently** - Requires multiple clarifications
+- ⚠️ **Output format matters** - Structure is as important as content
+- ⚠️ **Domain expertise required** - Technical accuracy is critical
+- ⚠️ **High-stakes use cases** - Production systems, critical decisions, published content
+- ⚠️ **Repetitive use** - You'll run this prompt 10+ times
+- ⚠️ **Team collaboration** - Others will use this prompt
+
+**Rule of Thumb**: If you'll use a prompt more than 3 times, refine it once.
 
 ---
 
@@ -888,6 +965,157 @@ Use analogies appropriate for [AUDIENCE LEVEL]."
 ### Output
 
 Use the Proposal Format above to present your refinement.
+
+---
+
+## Appendix: Quick Reference
+
+### The 7-Dimension Scorecard
+
+Rate each dimension 1-5, target ≥4 for production prompts:
+
+| Dimension | Bad (1-2) | Good (3-4) | Excellent (5) |
+|-----------|-----------|------------|---------------|
+| **Clarity** | "Make it better" | "Improve performance" | "Reduce API latency from 500ms to <200ms" |
+| **Specificity** | "Some tests" | "Unit tests" | "Jest unit tests with 80% coverage, table-driven" |
+| **Completeness** | Just task | Task + context | Role + Task + Context + Constraints + Format |
+| **Conciseness** | 500 words, 50% fluff | 200 words, clear | 100 words, every word essential |
+| **Examples** | None | 1 example | 2-3 examples with edge cases |
+| **Structure** | Wall of text | Bullet points | Headers + Lists + Code blocks |
+| **Actionability** | "Think about it" | "Analyze and suggest" | "Analyze X for Y, output as Z" |
+
+### Pattern Library - Copy & Paste Templates
+
+#### The Auditor
+
+```markdown
+You are a [DOMAIN] security auditor.
+
+Audit this [THING] for [SPECIFIC RISKS].
+
+For each finding, provide:
+- **Severity**: Critical | High | Medium | Low
+- **Risk**: [What could go wrong]
+- **Fix**: [Specific solution]
+- **Prevention**: [How to avoid in future]
+
+Prioritize by severity.
+```
+
+#### The Optimizer
+
+```markdown
+You are a [TECHNOLOGY] performance engineer.
+
+Current performance: [METRIC] = [CURRENT VALUE]
+Target: [METRIC] < [TARGET VALUE]
+
+Optimize this [THING] by:
+1. Identifying bottlenecks
+2. Proposing fixes with expected impact
+3. Providing optimized code
+
+For each optimization:
+- **Bottleneck**: [What's slow]
+- **Fix**: [Code example]
+- **Impact**: [Expected improvement]
+```
+
+#### The Teacher
+
+```markdown
+You are a [SUBJECT] teacher explaining to [AUDIENCE LEVEL] students.
+
+Explain [CONCEPT] using this structure:
+
+1. **What**: Simple definition in one sentence
+2. **Why**: Why it matters and when to use it
+3. **How**: Step-by-step process
+4. **Example**: Concrete real-world example
+5. **Gotchas**: Common mistakes to avoid
+
+Use analogies appropriate for [AUDIENCE LEVEL].
+```
+
+#### The Debugger
+
+```markdown
+You are a debugging expert for [TECH STACK].
+
+## Problem
+Expected: [WHAT SHOULD HAPPEN]
+Actual: [WHAT HAPPENS INSTEAD]
+Error: [FULL ERROR MESSAGE]
+
+## Task
+1. **Root Cause**: Explain why this happens
+2. **Fix**: Provide corrected code
+3. **Explanation**: Why this fix works
+4. **Prevention**: How to avoid this bug
+
+Show before/after code examples.
+```
+
+#### The Converter
+
+```markdown
+You are a [DOMAIN] expert.
+
+Convert this [INPUT FORMAT] to [OUTPUT FORMAT].
+
+Input:
+[PASTE INPUT HERE]
+
+Requirements:
+- [Specific requirement 1]
+- [Specific requirement 2]
+
+Output format:
+[SPECIFY EXACT FORMAT]
+
+Example:
+Input: [EXAMPLE]
+Output: [EXPECTED OUTPUT]
+```
+
+### Vague Word Blacklist
+
+Replace these vague words with specifics:
+
+| ❌ Vague | ✅ Specific |
+|----------|-------------|
+| "better" | "reduce latency from 2s to 200ms" |
+| "improve" | "increase test coverage from 60% to 80%" |
+| "optimize" | "reduce bundle size from 500KB to 200KB" |
+| "good" | "follows PEP 8 style guide" |
+| "nice" | "has descriptive variable names" |
+| "clean" | "cyclomatic complexity < 10" |
+| "fast" | "responds in < 100ms at p95" |
+| "simple" | "< 20 lines per function" |
+
+### Emergency Prompt Triage
+
+**Prompt broken? Fix it in 3 steps:**
+
+1. **Add concrete role**:
+   ```
+   Before: "Help me with code"
+   After: "You are a Python expert specializing in data pipelines"
+   ```
+
+2. **Add measurable criteria**:
+   ```
+   Before: "Make it faster"
+   After: "Reduce execution time from 5s to < 500ms"
+   ```
+
+3. **Add output format**:
+   ```
+   Before: "Find issues"
+   After: "List issues as: Issue | Severity | Fix | Impact"
+   ```
+
+---
 
 > "Great prompts are precise, purposeful, and produce predictable results."
 
