@@ -272,25 +272,25 @@ Auto-generated summary of all prompts in this repository.
 
 | Prompt | Lines | Words | Tokens (est.) | Size |
 |--------|------:|------:|--------------:|-----:|
-| [Api Design Principles](prompts/api-design-principles.md) | 911 | 2740 | 5177 | 20.2 KB |
-| [Cicd Workflows](prompts/cicd-workflows.md) | 1239 | 3660 | 8130 | 31.7 KB |
-| [Claude Code Skills Setup](prompts/claude-code-skills-setup.md) | 1270 | 4315 | 7612 | 29.7 KB |
+| [Api Design Principles](prompts/api-design-principles.md) | 984 | 3070 | 5750 | 22.4 KB |
+| [Cicd Workflows](prompts/cicd-workflows.md) | 1300 | 3897 | 8505 | 33.2 KB |
+| [Claude Code Skills Setup](prompts/claude-code-skills-setup.md) | 1291 | 4456 | 7851 | 30.6 KB |
 | [Clean Code Refactoring](prompts/clean-code-refactoring.md) | 496 | 2325 | 3852 | 15.0 KB |
-| [Code Cleanup Simplification](prompts/code-cleanup-simplification.md) | 926 | 3057 | 5536 | 21.6 KB |
-| [Code Review Best Practices](prompts/code-review-best-practices.md) | 911 | 3136 | 5225 | 20.4 KB |
-| [Documentation Consolidation](prompts/documentation-consolidation.md) | 761 | 2728 | 4788 | 18.7 KB |
-| [Domain Driven Design](prompts/domain-driven-design.md) | 1166 | 3432 | 7476 | 29.2 KB |
-| [Firebase Integration Best Practices](prompts/firebase-integration-best-practices.md) | 889 | 2877 | 5776 | 22.5 KB |
+| [Code Cleanup Simplification](prompts/code-cleanup-simplification.md) | 984 | 3314 | 5964 | 23.2 KB |
+| [Code Review Best Practices](prompts/code-review-best-practices.md) | 974 | 3386 | 5650 | 22.0 KB |
+| [Documentation Consolidation](prompts/documentation-consolidation.md) | 817 | 2976 | 5213 | 20.3 KB |
+| [Domain Driven Design](prompts/domain-driven-design.md) | 1227 | 3705 | 7955 | 31.0 KB |
+| [Firebase Integration Best Practices](prompts/firebase-integration-best-practices.md) | 960 | 3208 | 6355 | 24.8 KB |
 | [Golang Best Practices](prompts/golang-best-practices.md) | 723 | 2323 | 3931 | 15.3 KB |
-| [Google Cloud Best Practices](prompts/google-cloud-best-practices.md) | 680 | 2150 | 4295 | 16.7 KB |
-| [Nextjs Best Practices](prompts/nextjs-best-practices.md) | 900 | 2550 | 5035 | 19.6 KB |
-| [Performance Optimization](prompts/performance-optimization.md) | 1113 | 3887 | 7078 | 27.6 KB |
-| [Project Bootstrapping Guide](prompts/project-bootstrapping-guide.md) | 1187 | 3143 | 6501 | 25.3 KB |
+| [Google Cloud Best Practices](prompts/google-cloud-best-practices.md) | 750 | 2488 | 4849 | 18.9 KB |
+| [Nextjs Best Practices](prompts/nextjs-best-practices.md) | 973 | 2885 | 5588 | 21.8 KB |
+| [Performance Optimization](prompts/performance-optimization.md) | 1175 | 4165 | 7534 | 29.4 KB |
+| [Project Bootstrapping Guide](prompts/project-bootstrapping-guide.md) | 1263 | 3480 | 7070 | 27.6 KB |
 | [Prompt Engineering Refinement](prompts/prompt-engineering-refinement.md) | 688 | 2362 | 3864 | 15.0 KB |
-| [Security Best Practices](prompts/security-best-practices.md) | 1217 | 4410 | 8201 | 32.0 KB |
-| [Test Driven Development](prompts/test-driven-development.md) | 811 | 2756 | 4792 | 18.7 KB |
-| [Test Improvement Guide](prompts/test-improvement-guide.md) | 716 | 2489 | 4648 | 18.1 KB |
-| **Total** | **16604** | **54340** | **101917** | **398.0 KB** |
+| [Security Best Practices](prompts/security-best-practices.md) | 1281 | 4666 | 8648 | 33.7 KB |
+| [Test Driven Development](prompts/test-driven-development.md) | 885 | 3089 | 5326 | 20.8 KB |
+| [Test Improvement Guide](prompts/test-improvement-guide.md) | 788 | 2807 | 5140 | 20.0 KB |
+| **Total** | **17559** | **58602** | **109045** | **425.9 KB** |
 
 *Token count is estimated based on ~4 characters per token.*
 
