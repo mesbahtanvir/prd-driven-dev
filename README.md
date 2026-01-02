@@ -32,6 +32,8 @@ These prompts are designed to be:
 
 - **[Clean Code Refactoring](prompts/clean-code-refactoring.md)** - Transform your codebase into clean, professional code based on Robert C. Martin's "Clean Code" principles. Covers naming, functions, comments, formatting, classes, and code smells.
 
+- **[Code Cleanup & Simplification](prompts/code-cleanup-simplification.md)** - Eliminate technical debt by removing dead code, unused dependencies, legacy features, and over-engineered solutions. Includes detection tools, cleanup strategies, and simplification patterns for all major languages.
+
 ### 🧪 Testing
 
 - **[Test-Driven Development (TDD)](prompts/test-driven-development.md)** - Add comprehensive tests to existing code using characterization tests and TDD principles. Based on Kent Beck's TDD methodology with practical patterns for legacy code.
@@ -152,12 +154,22 @@ In the era of AI code generation, these prompts are **MORE relevant than ever**:
 4. Verify all code examples work with current codebase
 5. Set up automated documentation checks in CI/CD
 
+#### Example 7: Reducing Technical Debt
+
+1. Use [Code Cleanup & Simplification](prompts/code-cleanup-simplification.md) to identify dead code and unused dependencies
+2. Remove commented-out code and legacy features
+3. Simplify over-engineered abstractions
+4. Consolidate duplicate code
+5. Set up automated dead code detection in CI/CD
+6. Measure bundle size reduction and performance improvements
+
 ## Quick Reference Guide
 
 | Your Situation | Recommended Prompt |
 | --- | --- |
 | Starting a new project | [Project Bootstrapping Guide](prompts/project-bootstrapping-guide.md) |
 | Code is hard to read and maintain | [Clean Code Refactoring](prompts/clean-code-refactoring.md) |
+| Codebase has unused code and complexity | [Code Cleanup & Simplification](prompts/code-cleanup-simplification.md) |
 | Need to add tests to existing code | [Test-Driven Development](prompts/test-driven-development.md) |
 | Tests are flaky or have poor coverage | [Test Improvement Guide](prompts/test-improvement-guide.md) |
 | Reviewing or improving existing APIs | [API Design Principles](prompts/api-design-principles.md) |
@@ -186,9 +198,10 @@ In the era of AI code generation, these prompts are **MORE relevant than ever**:
 1. **[API Design Principles](prompts/api-design-principles.md)** - Build interfaces others will use
 2. **[Security Best Practices](prompts/security-best-practices.md)** - Protect your users
 3. **[Performance Optimization](prompts/performance-optimization.md)** - Make it fast
-4. **[Documentation Consolidation](prompts/documentation-consolidation.md)** - Maintain accurate, useful documentation
-5. **[CI/CD Workflows](prompts/cicd-workflows.md)** - Automate your deployments
-6. **[Next.js Best Practices](prompts/nextjs-best-practices.md)** or **[Golang Best Practices](prompts/golang-best-practices.md)** - Master your framework
+4. **[Code Cleanup & Simplification](prompts/code-cleanup-simplification.md)** - Eliminate technical debt
+5. **[Documentation Consolidation](prompts/documentation-consolidation.md)** - Maintain accurate, useful documentation
+6. **[CI/CD Workflows](prompts/cicd-workflows.md)** - Automate your deployments
+7. **[Next.js Best Practices](prompts/nextjs-best-practices.md)** or **[Golang Best Practices](prompts/golang-best-practices.md)** - Master your framework
 
 ### For Advanced Developers
 
