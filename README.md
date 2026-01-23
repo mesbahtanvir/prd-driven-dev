@@ -282,17 +282,20 @@ Auto-generated summary of all prompts in this repository.
 | [Documentation Consolidation](prompts/documentation-consolidation.md) | 817 | 2976 | 5213 | 20.3 KB |
 | [Domain Driven Design](prompts/domain-driven-design.md) | 1227 | 3705 | 7955 | 31.0 KB |
 | [Firebase Integration Best Practices](prompts/firebase-integration-best-practices.md) | 960 | 3208 | 6355 | 24.8 KB |
+| [Github Actions Optimization](prompts/github-actions-optimization.md) | 1251 | 3415 | 7319 | 28.5 KB |
 | [Golang Best Practices](prompts/golang-best-practices.md) | 723 | 2323 | 3931 | 15.3 KB |
 | [Google Cloud Best Practices](prompts/google-cloud-best-practices.md) | 750 | 2488 | 4849 | 18.9 KB |
 | [Nextjs Best Practices](prompts/nextjs-best-practices.md) | 973 | 2885 | 5588 | 21.8 KB |
 | [Performance Optimization](prompts/performance-optimization.md) | 1175 | 4165 | 7534 | 29.4 KB |
+| [Prd Driven Development](prompts/prd-driven-development.md) | 301 | 796 | 1254 | 4.8 KB |
 | [Project Bootstrapping Guide](prompts/project-bootstrapping-guide.md) | 1263 | 3480 | 7070 | 27.6 KB |
 | [Prompt Engineering Refinement](prompts/prompt-engineering-refinement.md) | 688 | 2362 | 3864 | 15.0 KB |
 | [Security Best Practices](prompts/security-best-practices.md) | 172 | 704 | 1382 | 5.3 KB |
 | [Startup Due Diligence](prompts/startup-due-diligence.md) | 354 | 1390 | 1950 | 7.6 KB |
 | [Test Driven Development](prompts/test-driven-development.md) | 885 | 3089 | 5326 | 20.8 KB |
 | [Test Improvement Guide](prompts/test-improvement-guide.md) | 788 | 2807 | 5140 | 20.0 KB |
-| **Total** | **14331** | **47867** | **89148** | **348.2 KB** |
+| [Webapp Fullstack Setup](prompts/webapp-fullstack-setup.md) | 1314 | 3786 | 8232 | 32.1 KB |
+| **Total** | **17197** | **55864** | **105953** | **413.8 KB** |
 
 *Token count is estimated based on ~4 characters per token.*
 
