@@ -28,6 +28,15 @@ prompts/
    - Include: Problem, Solution, Acceptance Criteria
 3. **Reference the PRD** in commits and PRs
 
+### Git Workflow
+
+> **Never push directly to main**
+
+1. Create a feature branch: `git checkout -b feat/prd-XXX-short-name`
+2. Make commits referencing the PRD
+3. Push branch and create PR to merge into main
+4. PRs should reference the PRD in description
+
 ### Creating a New PRD
 
 ```markdown
