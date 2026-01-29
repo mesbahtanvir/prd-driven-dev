@@ -16,8 +16,8 @@ PRD-XXX_[Type]_Audit_YYYY-MM-DD.md
 ```
 
 Examples:
+
 - `PRD-011_DevOps_Audit_2026-01-29.md`
 - `PRD-011_Security_Audit_2026-01-29.md`
 - `PRD-011_Production_Audit_2026-01-29.md`
 - `PRD-011_Full_Audit_2026-01-29.md`
-

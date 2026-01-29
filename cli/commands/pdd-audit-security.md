@@ -284,14 +284,14 @@ app.use('/api/', limiter);
 3. Remove tokens from URLs
 
 ### High Priority (This Sprint)
-4. Move token to httpOnly cookies
-5. Add token expiration
-6. Implement password hashing
+1. Move token to httpOnly cookies
+2. Add token expiration
+3. Implement password hashing
 
 ### Medium Priority (Next Sprint)
-7. Add security headers (HSTS, CSP)
-8. Sanitize error messages
-9. Remove PII from logs
+1. Add security headers (HSTS, CSP)
+2. Sanitize error messages
+3. Remove PII from logs
 
 ## Next Steps
 - [ ] Fix all blockers before deployment
