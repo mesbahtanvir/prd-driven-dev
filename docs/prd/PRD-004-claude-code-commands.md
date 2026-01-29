@@ -12,129 +12,150 @@ Users currently have to manually copy prompt content or reference prompt files w
 1. **Discovery** — Users don't know which prompts exist without checking the repo
 2. **Invocation** — Copy-pasting prompts is tedious and error-prone
 3. **Arguments** — No way to pass context (PRD number, file paths) to prompts
-4. **Workflow** — Switching between reading prompts and executing them breaks flow
-
-The prompts are powerful but underutilized because they're not integrated into the Claude Code workflow.
+4. **Updates** — No way to get latest prompts without manual copying
+5. **Per-project setup** — Having to configure each project is tedious
 
 ## Solution
 
-Create Claude Code custom commands (`.claude/commands/*.md`) that wrap each PDD prompt, allowing users to invoke them with slash commands and arguments.
+Create an npm package that installs PDD commands **globally** to `~/.claude/commands/`, making them available in all projects with a single installation.
 
-### Command Structure
-
-```
-.claude/commands/
-├── prd.md              # /prd [type] — Create a new PRD
-├── audit-features.md   # /audit-features [prd-number] — Audit feature implementation
-├── audit-tests.md      # /audit-tests [prd-number] — Audit test coverage
-├── audit-alignment.md  # /audit-alignment — Check PRD vs code alignment
-├── audit-ux.md         # /audit-ux — Audit UX issues
-├── audit-qa.md         # /audit-qa — Find bugs and quality issues
-├── project-setup.md    # /project-setup [stack] — Bootstrap a new project
-└── prd-status.md       # /prd-status — Show all PRDs and their status
-```
-
-### Example Usage
+### Installation
 
 ```bash
-# Create a new feature PRD
-/prd feature
+# Install globally (one-time setup)
+npm install -g pdd
 
-# Create a bugfix PRD
-/prd bugfix
-
-# Audit implementation of PRD-005
-/audit-features 005
-
-# Check all PRDs for alignment gaps
-/audit-alignment
-
-# Show PRD status dashboard
-/prd-status
+# Or use npx for one-off
+npx pdd install
 ```
 
-### Argument Passing
+### Updates
 
-Commands accept arguments via `$ARGUMENTS` placeholder:
+```bash
+# Update to latest version
+npm update -g pdd
 
-```markdown
-# .claude/commands/audit-features.md
+# Or check and update
+pdd update
 
-Audit the implementation of PRD-$ARGUMENTS against the codebase.
+# Check current version
+pdd --version
+```
 
-[Include prompts/core/02-audit-features.md content]
+### What Gets Installed
+
+```
+~/.claude/
+└── commands/
+    ├── prd.md              # /prd [type] — Create a new PRD
+    ├── prd-init.md         # /prd-init — Initialize PDD in current project
+    ├── prd-status.md       # /prd-status — Show all PRDs and status
+    ├── audit-features.md   # /audit-features [prd] — Audit implementation
+    ├── audit-tests.md      # /audit-tests [prd] — Audit test coverage
+    ├── audit-alignment.md  # /audit-alignment — PRD vs code alignment
+    ├── audit-ux.md         # /audit-ux — UX audit
+    └── audit-qa.md         # /audit-qa — Quality audit
+```
+
+### Example Usage (After Installation)
+
+```bash
+# In any project, these commands are now available:
+
+/prd feature          # Create a new feature PRD
+/prd bugfix           # Create a bugfix PRD
+/prd-init             # Set up docs/prd/ in current project
+/prd-status           # Show PRD dashboard
+/audit-features 005   # Audit PRD-005 implementation
+/audit-qa             # Find bugs and quality issues
 ```
 
 ## Acceptance Criteria
 
-### AC1: Core Commands Created
-- [ ] `/prd` command exists and accepts type argument (feature/bugfix/refactor)
-- [ ] `/audit-features` command exists and accepts PRD number
-- [ ] `/audit-tests` command exists and accepts PRD number
-- [ ] `/audit-alignment` command exists
-- [ ] `/audit-ux` command exists
-- [ ] `/audit-qa` command exists
+### AC1: npm Package
+- [ ] Package published to npm as `pdd` (or `prd-driven-dev`)
+- [ ] `npm install -g pdd` installs commands to `~/.claude/commands/`
+- [ ] `npm update -g pdd` updates commands to latest version
+- [ ] Package includes version number in installed commands
 
-### AC2: Utility Commands
-- [ ] `/prd-status` command shows all PRDs with status
-- [ ] `/project-setup` command accepts stack type argument
+### AC2: CLI Commands
+- [ ] `pdd install` — Install/reinstall commands to ~/.claude/commands/
+- [ ] `pdd update` — Check for updates and install if available
+- [ ] `pdd --version` — Show installed version
+- [ ] `pdd uninstall` — Remove commands from ~/.claude/commands/
 
-### AC3: Argument Handling
-- [ ] Commands use `$ARGUMENTS` to accept user input
-- [ ] Commands provide sensible defaults when no argument given
-- [ ] Commands validate arguments where appropriate
+### AC3: Slash Commands Created
+- [ ] `/prd [type]` — Create PRD (feature/bugfix/refactor)
+- [ ] `/prd-init` — Initialize PDD in current project (creates docs/prd/, CLAUDE.md)
+- [ ] `/prd-status` — Show all PRDs with status
+- [ ] `/audit-features [prd]` — Audit feature implementation
+- [ ] `/audit-tests [prd]` — Audit test coverage
+- [ ] `/audit-alignment` — Check PRD vs code alignment
+- [ ] `/audit-ux` — Audit UX issues
+- [ ] `/audit-qa` — Find bugs and quality issues
 
-### AC4: Documentation
-- [ ] README updated with command usage examples
-- [ ] CLAUDE.md updated with available commands
-- [ ] Each command file includes brief usage comment
+### AC4: Update Mechanism
+- [ ] Commands include version comment for tracking
+- [ ] `pdd update` compares installed vs npm version
+- [ ] Update preserves user customizations (or warns before overwriting)
 
-### AC5: Prompt Content
-- [ ] Commands include full prompt content (not just references)
-- [ ] Commands are self-contained and work standalone
-- [ ] Commands follow Claude Code skill format
+### AC5: Documentation
+- [ ] README updated with installation instructions
+- [ ] `pdd --help` shows usage
+- [ ] Each command includes usage comment at top
 
 ## Out of Scope
 
+- VS Code extension (future PRD-005)
 - MCP server integration (future PRD)
-- Command autocompletion
-- Interactive command builder
-- Command versioning
+- Per-project installation (only global)
+- Auto-update (manual update only)
 
 ## Technical Notes
 
-### Claude Code Command Format
+### Package Structure
 
-```markdown
-# .claude/commands/command-name.md
-
-Brief description of what this command does.
-
-$ARGUMENTS will be replaced with user input after the slash command.
-
-[Rest of prompt content...]
+```
+pdd/
+├── package.json
+├── bin/
+│   └── pdd.js           # CLI entry point
+├── commands/            # Command templates
+│   ├── prd.md
+│   ├── prd-init.md
+│   ├── audit-features.md
+│   └── ...
+└── lib/
+    ├── install.js       # Copy commands to ~/.claude/commands/
+    ├── update.js        # Check and update commands
+    └── version.js       # Version management
 ```
 
-### Directory Structure
+### Version Tracking
 
-Commands go in `.claude/commands/` at repo root. This is the standard Claude Code location for custom commands.
+Each installed command includes a version comment:
 
-### Prompt Inclusion Strategy
+```markdown
+<!-- pdd v1.0.0 -->
+# /prd — Create a new PRD
+...
+```
 
-Two options:
-1. **Inline** — Copy full prompt content into command file
-2. **Reference** — Keep prompts in `prompts/` and reference them
+This allows `pdd update` to detect outdated commands.
 
-Recommend **inline** for:
-- Self-contained commands that work when repo is cloned
-- Avoiding broken references
-- Allowing command-specific customization
+### Cross-Platform Paths
+
+```javascript
+const homeDir = os.homedir();
+const claudeCommandsDir = path.join(homeDir, '.claude', 'commands');
+```
 
 ## Success Metrics
 
-1. Users can invoke PDD prompts with single slash command
-2. Argument passing works for PRD numbers and types
-3. Commands are discoverable via `/help` or similar
+1. One-command global installation works
+2. Commands available in all projects after install
+3. `pdd update` successfully updates to latest version
+4. Users don't need to configure per-project
 
 ---
 
@@ -143,3 +164,4 @@ Recommend **inline** for:
 | Date | Change |
 |------|--------|
 | 2026-01-29 | PRD created |
+| 2026-01-29 | Updated to global installation + npm package |
