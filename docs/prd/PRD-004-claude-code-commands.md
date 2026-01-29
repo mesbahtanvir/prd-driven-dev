@@ -47,14 +47,15 @@ pdd --version
 ```
 ~/.claude/
 └── commands/
-    ├── prd.md              # /prd [type] — Create a new PRD
-    ├── prd-init.md         # /prd-init — Initialize PDD in current project
-    ├── prd-status.md       # /prd-status — Show all PRDs and status
-    ├── audit-features.md   # /audit-features [prd] — Audit implementation
-    ├── audit-tests.md      # /audit-tests [prd] — Audit test coverage
-    ├── audit-alignment.md  # /audit-alignment — PRD vs code alignment
-    ├── audit-ux.md         # /audit-ux — UX audit
-    └── audit-qa.md         # /audit-qa — Quality audit
+    ├── pdd-new.md          # /pdd-new [type] — Create a new PRD
+    ├── pdd-init.md         # /pdd-init — Initialize PDD in current project
+    ├── pdd-status.md       # /pdd-status — Show all PRDs and status
+    ├── pdd-audit.md        # /pdd-audit [type] [prd] — Run audit prompts
+    ├── pdd-features.md     # /pdd-features [prd] — Audit implementation
+    ├── pdd-tests.md        # /pdd-tests [prd] — Audit test coverage
+    ├── pdd-alignment.md    # /pdd-alignment — PRD vs code alignment
+    ├── pdd-ux.md           # /pdd-ux — UX audit
+    └── pdd-qa.md           # /pdd-qa — Quality audit
 ```
 
 ### Example Usage (After Installation)
@@ -62,12 +63,12 @@ pdd --version
 ```bash
 # In any project, these commands are now available:
 
-/prd feature          # Create a new feature PRD
-/prd bugfix           # Create a bugfix PRD
-/prd-init             # Set up docs/prd/ in current project
-/prd-status           # Show PRD dashboard
-/audit-features 005   # Audit PRD-005 implementation
-/audit-qa             # Find bugs and quality issues
+/pdd-new feature      # Create a new feature PRD
+/pdd-new bugfix       # Create a bugfix PRD
+/pdd-init             # Set up docs/prd/ in current project
+/pdd-status           # Show PRD dashboard
+/pdd-features 005     # Audit PRD-005 implementation
+/pdd-qa               # Find bugs and quality issues
 ```
 
 ## Acceptance Criteria
@@ -84,15 +85,15 @@ pdd --version
 - [ ] `pdd --version` — Show installed version
 - [ ] `pdd uninstall` — Remove commands from ~/.claude/commands/
 
-### AC3: Slash Commands Created
-- [ ] `/prd [type]` — Create PRD (feature/bugfix/refactor)
-- [ ] `/prd-init` — Initialize PDD in current project (creates docs/prd/, CLAUDE.md)
-- [ ] `/prd-status` — Show all PRDs with status
-- [ ] `/audit-features [prd]` — Audit feature implementation
-- [ ] `/audit-tests [prd]` — Audit test coverage
-- [ ] `/audit-alignment` — Check PRD vs code alignment
-- [ ] `/audit-ux` — Audit UX issues
-- [ ] `/audit-qa` — Find bugs and quality issues
+### AC3: Slash Commands Created (all prefixed with `pdd-`)
+- [ ] `/pdd-new [type]` — Create PRD (feature/bugfix/refactor)
+- [ ] `/pdd-init` — Initialize PDD in current project (creates docs/prd/, CLAUDE.md)
+- [ ] `/pdd-status` — Show all PRDs with status
+- [ ] `/pdd-features [prd]` — Audit feature implementation
+- [ ] `/pdd-tests [prd]` — Audit test coverage
+- [ ] `/pdd-alignment` — Check PRD vs code alignment
+- [ ] `/pdd-ux` — Audit UX issues
+- [ ] `/pdd-qa` — Find bugs and quality issues
 
 ### AC4: Update Mechanism
 - [ ] Commands include version comment for tracking
